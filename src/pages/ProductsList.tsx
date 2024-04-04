@@ -1,6 +1,7 @@
 import { View, Text, StyleSheet } from "react-native";
 import { StatusBar } from "expo-status-bar";
 import HeroProductList from "../components/HeroProductsList";
+import Beverage from "../components/Beverage";
 
 function ProductsList() {
   return (
@@ -10,6 +11,7 @@ function ProductsList() {
         <Text style={styles.title}>Buenos Aires, Argentina</Text>
         <Text style={styles.subTitle}>What coffee would you like?</Text>
         <HeroProductList />
+        <Beverage />
       </View>
     </>
   );

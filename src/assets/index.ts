@@ -1,1 +1,5 @@
 export const COFFEE_HERO = require('./coffeHero.png')
+export const SIGNATURE = require('./signatureCoffee.png')
+export const ICE_COFFEE = require('./iceCoffee.png')
+export const HOT_COFFEE= require('./hotCoffee.png')
+export const CHOCOLATE = require('./chocolate.png')
