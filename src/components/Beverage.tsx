@@ -1,10 +1,21 @@
 import { Text, View, StyleSheet, Image, TouchableOpacity } from "react-native";
 import { filters } from "../constants/constants";
-import { useState } from "react";
 import { Filter } from "../utils/types/types";
 
-function Beverage() {
-    const [selected, setSelected] = useState(1)
+interface Props{
+    setSelected: any;
+    selected: any;
+}
+
+function Beverage({ setSelected, selected }: Props) {
+
+    const handlePress = (index: number) => {
+        if (selected === index) {
+          setSelected(null);
+        } else {
+          setSelected(index);
+        }
+      };
 
     return (
         <View style={styles.container}>
@@ -12,7 +23,7 @@ function Beverage() {
             <View style={styles.filterGroup}>
                 {
                     filters?.map((filter: Filter, index: number) => (
-                        <TouchableOpacity  style={selected === index ? styles.selectedFilter : styles.filterContainer} onPress={() => setSelected(index)}>
+                        <TouchableOpacity  style={selected === index ? styles.selectedFilter : styles.filterContainer} onPress={() => handlePress(index)}>
                             <>
                             <Image style={styles.image} source={filter.photo} />
                             <Text style={selected === index ? styles.selectedTextFilter : styles.textFilter}>{filter.name}</Text>
@@ -64,7 +75,9 @@ const styles = StyleSheet.create({
     filterGroup: {
         flexDirection: 'row',
         flexWrap: 'wrap',
-        gap: 15
+        gap: 15,
+        position: 'relative',
+        right: 7
     },
     textFilter: {
         fontWeight: '600',
