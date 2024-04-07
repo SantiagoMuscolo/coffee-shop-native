@@ -1,12 +1,12 @@
 import { Route, Routes } from "react-router-native";
-import Hero from "./Hero";
 import ProductsList from "./ProductsList";
+import ProductDetail from "./ProductDetail";
 
 function Main() {
   return (
     <Routes>
-      <Route path="/" element={<Hero />} />
-      <Route path="/products-list" element={<ProductsList />} />
+      <Route path="/" element={<ProductsList />} />
+      <Route path="/:id" element={<ProductDetail />} />
     </Routes>
   )
 }

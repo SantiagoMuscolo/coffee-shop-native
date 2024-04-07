@@ -1,5 +1,6 @@
 import { View, StyleSheet, Text, Image } from "react-native"
 import data from "../data/data"
+import { Link } from "react-router-native";
 
 interface Props {
     selected: any;
@@ -15,6 +16,7 @@ function ProductsListComponent({ selected }: Props) {
             <View style={styles.container}>
                 {
                     validation?.map((coffee: any) => (
+                        <Link to={`/${coffee.id}`}>
                         <View style={styles.card}>
                             <Image style={styles.image} source={coffee.imagen} />
                             <View style={styles.cardText}>
@@ -27,6 +29,8 @@ function ProductsListComponent({ selected }: Props) {
                                 </View>
                             </View>
                         </View>
+                        </Link>
+                        
                     ))
                 }
             </View>

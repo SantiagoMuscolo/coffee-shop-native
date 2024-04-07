@@ -2,16 +2,20 @@ import { AMERICANO, MACCHIATO, FLAT_WHITE, MILK_CHOCOLATE, MILK_COFFEE, AFFOGATO
 
 export default [
     {
+      "id": 1,
       "nombre": "Americano",
-      "descripcion": "Una taza de café negro diluido con agua caliente, similar en fuerza al café filtrado.",
+      "descripcion": "Imagina una taza de cerámica blanca, redondeada y reconfortante al tacto. En su interior reposa una creación que despierta los sentidos: una infusión oscilante, un tono profundo que parece absorber la luz. Este café, negro como el abismo de la noche, ha sido sutilmente diluido con agua caliente, una fusión que equilibra su intensidad sin perder su carácter distintivo.",
       "origen": "Estados Unidos",
       "intensidad": "Media",
       "category": 2,
       "sabor": ["Suave", "Simple"],
       "preparacion": "5-8 mins",
-      "imagen": AMERICANO
+      "imagen": AMERICANO,
+      "stars": "4.5",
+      "price": "4.20"
     },
     {
+      "id": 2,
       "nombre": "Macchiato",
       "descripcion": "Un espresso con una pequeña cantidad de leche vaporizada o espuma de leche.",
       "origen": "Italia",
@@ -19,9 +23,12 @@ export default [
       "category": 2,
       "sabor": ["Intenso", "Lechoso"],
       "preparacion": "15-18 mins",
-      "imagen": MACCHIATO
+      "imagen": MACCHIATO,
+      "stars": "5",
+      "price": "8.00"
     },
     {
+      "id": 3,
       "nombre": "Flat White",
       "descripcion": "Similar a un latte pero con menos leche vaporizada y más espresso, creando una bebida más fuerte y concentrada.",
       "origen": "Australia",
@@ -29,9 +36,12 @@ export default [
       "category": 0,
       "sabor": ["Rico", "Suave"],
       "preparacion": "8-12 mins",
-      "imagen": FLAT_WHITE
+      "imagen": FLAT_WHITE,
+      "stars": "4",
+      "price": "2.20"
     },
     {
+      "id": 4,
       "nombre": "Café con Leche",
       "descripcion": "Una mezcla de café y leche caliente, típicamente a partes iguales.",
       "origen": "España",
@@ -39,9 +49,12 @@ export default [
       "category": 2,
       "sabor": ["Equilibrado", "Lechoso"],
       "preparacion": "12-18 mins",
-      "imagen": MILK_COFFEE
+      "imagen": MILK_COFFEE,
+      "stars": "4.5",
+      "price": "6.20"
     },
     {
+      "id": 5,
       "nombre": "Affogato",
       "descripcion": "Una bola de helado de vainilla cubierto con un solo tiro de espresso caliente.",
       "origen": "Italia",
@@ -49,9 +62,12 @@ export default [
       "category": 1,
       "sabor": ["Dulce", "Refrescante"],
       "preparacion": "25-28 mins",
-      "imagen": AFFOGATO
+      "imagen": AFFOGATO,
+      "stars": "2",
+      "price": "1.10"
     },
     {
+        "id": 6,
         "nombre": "Espresso",
         "descripcion": "Una pequeña cantidad de agua caliente se fuerza a través de granos de café finamente molidos para producir un espresso concentrado y sabroso.",
         "origen": "Italia",
@@ -59,9 +75,12 @@ export default [
         "category": 2,
         "sabor": ["Fuerte", "Amargo"],
         "preparacion": "15-18 mins",
-        "imagen": ESPRESSO
+        "imagen": ESPRESSO,
+        "stars": "1",
+        "price": "3.20"
       },
       {
+        "id": 7,
         "nombre": "Latte",
         "descripcion": "Un espresso suave con leche vaporizada y espuma de leche.",
         "origen": "Europa",
@@ -69,9 +88,12 @@ export default [
         "category": 1,
         "sabor": ["Suave", "Cremoso"],
         "preparacion": "15-28 mins",
-        "imagen": ICE_LATTE
+        "imagen": ICE_LATTE,
+        "stars": "4",
+        "price": "8.20"
       },
       {
+        "id": 8,
         "nombre": "Chocolate con leche",
         "descripcion": "Una mezcla de chocolate derretido y leche, a veces endulzada y aromatizada.",
         "origen": "Varios",
@@ -79,9 +101,12 @@ export default [
         "category": 3,
         "sabor": ["Dulce", "Cremoso"],
         "preparacion": "5-8 mins",
-        "imagen": MILK_CHOCOLATE
+        "imagen": MILK_CHOCOLATE,
+        "stars": "2",
+        "price": "2.20"
       },
       {
+        "id": 9,
         "nombre": "Cappuccino",
         "descripcion": "Espresso mezclado con leche vaporizada y una capa espumosa de leche.",
         "origen": "Italia",
@@ -89,9 +114,12 @@ export default [
         "category": 0,
         "sabor": ["Equilibrado", "Espumoso"],
         "preparacion": "5-8 mins",
-        "imagen": CAPUCCINO
+        "imagen": CAPUCCINO,
+        "stars": "4.5",
+        "price": "1.00"
       },
       {
+        "id": 10,
         "nombre": "Mocha",
         "descripcion": "Una mezcla de espresso, chocolate y leche vaporizada, coronada con espuma de leche.",
         "origen": "Estados Unidos",
@@ -99,7 +127,9 @@ export default [
         "category": 0,
         "sabor": ["Dulce", "Chocolateado"],
         "preparacion": "15-18 mins",
-        "imagen": MOCHA
+        "imagen": MOCHA,
+        "stars": "3.5",
+        "price": "4.20"
       }
   ]
   
