@@ -1,14 +1,16 @@
-import { View, Text, StyleSheet, ScrollView, Image } from "react-native";
+import { View, Text, StyleSheet, ScrollView, Image, TouchableOpacity } from "react-native";
 import { StatusBar } from "expo-status-bar";
 import HeroProductList from "../components/HeroProductsList";
 import Beverage from "../components/Beverage";
 import ProductsListComponent from "../components/ProductsListComponent";
 import { useState } from "react";
 import { CART } from "../assets";
+import { Link } from "react-router-native";
 
 
 function ProductsList() {
   const [selected, setSelected] = useState(null)
+ 
   return (
     <>
       <StatusBar style="dark" />
@@ -19,7 +21,11 @@ function ProductsList() {
               <Text style={styles.title}>Buenos Aires, Argentina</Text>
               <Text style={styles.subTitle}>What coffee would you like?</Text>
             </View>
-            <Image style={styles.image} source={CART}/>       
+            <TouchableOpacity onPress={() => {}} activeOpacity={4}>
+              <Link to={"/cart"}>
+                <Image style={styles.image} source={CART} />
+              </Link>
+            </TouchableOpacity>
           </View>
           <HeroProductList />
           <Beverage setSelected={setSelected} selected={selected} />
@@ -53,11 +59,11 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'space-between'
   },
-  image:{
+  image: {
     width: 25,
     height: 25,
     marginRight: 35
-  }
+  },
 });
 
 export default ProductsList;
