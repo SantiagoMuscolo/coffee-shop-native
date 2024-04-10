@@ -1,13 +1,17 @@
 import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
-import { Link } from "react-router-native";
+import { useCartContext } from "../context/CartContext";
 
-function Cart(){
+function Cart({navigation}){
+    const { cartlist } = useCartContext()
+
+    console.log(cartlist);
+    
     return(
         <View style={styles.container}>
            <TouchableOpacity onPress={() => {}} activeOpacity={1}>
-              <Link to={"/"}>
+              <TouchableOpacity onPress={() => navigation.navigate('Home')}>
                 <Text>Return</Text>
-              </Link>
+              </TouchableOpacity>
             </TouchableOpacity>
             
         </View>
@@ -17,6 +21,7 @@ function Cart(){
 const styles = StyleSheet.create({
     container: {
         flexGrow: 1,
+        marginTop: 10
     }
 })
 

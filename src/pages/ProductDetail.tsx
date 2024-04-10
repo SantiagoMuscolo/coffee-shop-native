@@ -1,14 +1,16 @@
 import { View, Text, Image, StyleSheet, TouchableOpacity, ScrollView } from "react-native";
-import { Link, useParams } from "react-router-native";
+
 import { STAR, ARROW_BACK } from "../assets";
 import data from "../data/data";
 import { sizes } from "../constants/constants";
 import { useState } from "react";
+import { useCartContext } from "../context/CartContext";
 
-function ProductDetail() {
+function ProductDetail({ route, navigation }) {
     const [selectedSize, setSelectedSize] = useState(1);
-    
-    const { id } = useParams();
+    const { addProduct } = useCartContext();
+
+    const { id } = route.params;
     const product = data?.find(item => item.id === parseInt(id))
 
     const handlePress = (id: number) => {
@@ -19,6 +21,10 @@ function ProductDetail() {
         }
     };
 
+    const handleAddProduct = () => {
+        addProduct(product)
+    }
+
     return (
         <ScrollView style={styles.scrolleableContainer}>
             {
@@ -26,9 +32,9 @@ function ProductDetail() {
                     <Text>404: Producto no encontrado</Text>
                 ) : (
                     <View style={styles.container}>
-                        <Link style={styles.return} to={'/'}>
+                        <TouchableOpacity style={styles.return} onPress={() => navigation.navigate('Home')}>
                             <Image style={styles.imageReturn} source={ARROW_BACK} />
-                        </Link>
+                        </TouchableOpacity>
                         <Image style={styles.image} source={product.imagen} />
                         <View style={styles.heroContainer}>
                             <Text style={styles.title}>{product.nombre}</Text>
@@ -59,7 +65,7 @@ function ProductDetail() {
                                 <Text style={styles.genericTitle}>Price</Text>
                                 <Text style={styles.price}>$ {product.price}</Text>
                             </View>
-                            <TouchableOpacity style={styles.buyButton}>
+                            <TouchableOpacity style={styles.buyButton} onPress={handleAddProduct}>
                                 <Text style={styles.textBuyContainer}>Add to cart</Text>
                             </TouchableOpacity>
                         </View>
@@ -79,7 +85,7 @@ const styles = StyleSheet.create({
         zIndex: 1,
         elevation: 1,
         flexGrow: 1
-      },
+    },
     image: {
         width: 400,
         height: 300,

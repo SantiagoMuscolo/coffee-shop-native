@@ -12,7 +12,7 @@ export default [
       "preparacion": "5-8 mins",
       "imagen": AMERICANO,
       "stars": "4.5",
-      "price": "4.20"
+      "price": "4.20",
     },
     {
       "id": 2,

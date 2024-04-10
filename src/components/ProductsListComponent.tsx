@@ -1,12 +1,13 @@
-import { View, StyleSheet, Text, Image } from "react-native"
+import { View, StyleSheet, Text, Image, TouchableOpacity } from "react-native"
 import data from "../data/data"
 import { Link } from "react-router-native";
 
 interface Props {
     selected: any;
+    navigation: any;
 }
 
-function ProductsListComponent({ selected }: Props) {
+function ProductsListComponent({ selected, navigation }: Props) {
 
     const validation = selected !== null ? data.filter((e) => e.category === selected) : data;
 
@@ -16,7 +17,7 @@ function ProductsListComponent({ selected }: Props) {
             <View style={styles.container}>
                 {
                     validation?.map((coffee: any) => (
-                        <Link to={`/${coffee.id}`}>
+                        <TouchableOpacity onPress={() => navigation.navigate('ProductDetail', { id: `${coffee.id}` })}>
                         <View style={styles.card}>
                             <Image style={styles.image} source={coffee.imagen} />
                             <View style={styles.cardText}>
@@ -29,7 +30,7 @@ function ProductsListComponent({ selected }: Props) {
                                 </View>
                             </View>
                         </View>
-                        </Link>
+                        </TouchableOpacity>
                         
                     ))
                 }
