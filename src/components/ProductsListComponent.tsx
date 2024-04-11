@@ -17,7 +17,7 @@ function ProductsListComponent({ selected, navigation }: Props) {
             <View style={styles.container}>
                 {
                     validation?.map((coffee: any) => (
-                        <TouchableOpacity onPress={() => navigation.navigate('ProductDetail', { id: `${coffee.id}` })}>
+                        <TouchableOpacity onPress={() => navigation.navigate('ProductDetail', { id: `${coffee.id}` })} key={coffee.id}>
                         <View style={styles.card}>
                             <Image style={styles.image} source={coffee.imagen} />
                             <View style={styles.cardText}>

@@ -22,9 +22,13 @@ function ProductDetail({ route, navigation }) {
     };
 
     const handleAddProduct = () => {
-        addProduct(product)
-    }
-
+        const productToAdd = {
+            product: product,
+            cantidad: 1, 
+        };
+        addProduct(productToAdd);
+    };
+    
     return (
         <ScrollView style={styles.scrolleableContainer}>
             {
