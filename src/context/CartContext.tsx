@@ -36,7 +36,7 @@ export const CartProvider = ({ children }) => {
     const productValue = removedProduct.product.price;
     setTotalProductValue(prevTotal => prevTotal - productValue);
 };
-
+console.log(totalProductValue)
   return (
     <cartContext.Provider
       value={{

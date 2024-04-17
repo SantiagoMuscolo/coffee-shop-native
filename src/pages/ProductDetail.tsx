@@ -3,11 +3,13 @@ import { View, Text, Image, StyleSheet, TouchableOpacity, ScrollView } from "rea
 import { STAR, ARROW_BACK } from "../assets";
 import data from "../data/data";
 import { sizes } from "../constants/constants";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useCartContext } from "../context/CartContext";
+import AwesomeAlert from 'react-native-awesome-alerts';
 
 function ProductDetail({ route, navigation }) {
     const [selectedSize, setSelectedSize] = useState(1);
+    const [showAlert, setShowAlert] = useState(false)
     const { addProduct } = useCartContext();
 
     const { id } = route.params;
@@ -24,11 +26,20 @@ function ProductDetail({ route, navigation }) {
     const handleAddProduct = () => {
         const productToAdd = {
             product: product,
-            cantidad: 1, 
+            cantidad: 1,
         };
         addProduct(productToAdd);
     };
-    
+
+    useEffect(() => {
+        if (showAlert) {
+          const timer = setTimeout(() => {
+            setShowAlert(false)
+          }, 3000);
+          return () => clearTimeout(timer);
+        }
+      }, [showAlert]);
+
     return (
         <ScrollView style={styles.scrolleableContainer}>
             {
@@ -69,9 +80,27 @@ function ProductDetail({ route, navigation }) {
                                 <Text style={styles.genericTitle}>Price</Text>
                                 <Text style={styles.price}>$ {product.price}</Text>
                             </View>
-                            <TouchableOpacity style={styles.buyButton} onPress={handleAddProduct}>
+                            <TouchableOpacity style={styles.buyButton} onPress={() => {
+                                handleAddProduct()
+                                setShowAlert(!showAlert)
+                            }}>
                                 <Text style={styles.textBuyContainer}>Add to cart</Text>
                             </TouchableOpacity>
+                            <AwesomeAlert
+                                show={showAlert}
+                                showProgress={false}
+                                title="Agregado con exito!"
+                                message="El producto se ha agregado correctamente al carrito!"
+                                closeOnTouchOutside={true}
+                                closeOnHardwareBackPress={false}
+                                showCancelButton={false}
+                                showConfirmButton={true}
+                                confirmText="Ok, gracias!"
+                                confirmButtonColor="#DD6B55"
+                                messageStyle={{textAlign: 'center'}}
+                                confirmButtonStyle={{backgroundColor: '#8B4513'}}
+                                onConfirmPressed={() => setShowAlert(false)}
+                            />
                         </View>
                     </View>
                 )
@@ -189,7 +218,8 @@ const styles = StyleSheet.create({
     buyContainer: {
         flexDirection: 'row',
         alignItems: 'center',
-        marginTop: 70,
+        position: 'relative',
+        top: 140,
         gap: 40,
         marginLeft: 10,
         paddingBottom: 20,

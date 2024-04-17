@@ -4,7 +4,7 @@ export default [
     {
       "id": 1,
       "nombre": "Americano",
-      "descripcion": "Imagina una taza de cerámica blanca, redondeada y reconfortante al tacto. En su interior reposa una creación que despierta los sentidos: una infusión oscilante, un tono profundo que parece absorber la luz. Este café, negro como el abismo de la noche, ha sido sutilmente diluido con agua caliente, una fusión que equilibra su intensidad sin perder su carácter distintivo.",
+      "descripcion": "Americano con un sabor intenso, especialmente creado para darse un buen gusto.",
       "origen": "Estados Unidos",
       "intensidad": "Media",
       "category": 2,
@@ -42,7 +42,7 @@ export default [
     },
     {
       "id": 4,
-      "nombre": "Café con Leche",
+      "nombre": "Café c/l",
       "descripcion": "Una mezcla de café y leche caliente, típicamente a partes iguales.",
       "origen": "España",
       "intensidad": "Media",
