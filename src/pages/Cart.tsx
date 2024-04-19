@@ -3,10 +3,7 @@ import { useCartContext } from "../context/CartContext";
 import { PLUS, TRASH, ARROW_BACK, CART } from "../assets";
 
 function Cart({ navigation }) {
-    const { cartlist, addProduct, removeProduct, totalProductValue } =
-        useCartContext();
-
-    console.log(cartlist);
+    const { cartlist, addProduct, removeProduct, totalProductValue, setCartlist, setTotalProductValue } = useCartContext();
 
     const handleAddProduct = (product) => {
         const productToAdd = {
@@ -53,10 +50,12 @@ function Cart({ navigation }) {
                 ))
             ) : (
                 <View style={styles.emptyCartContainer}>
-                    <Image source={CART} style={styles.image}/>
-                    <Text style={styles.emptyCartText}>Tu carrito actualmente se encuentra vacio, porfavor agrega productos para poder verlos reflejados aqui!</Text>
+                    <Image source={CART} style={styles.image} />
+                    <Text style={styles.emptyCartText}>
+                        Tu carrito actualmente se encuentra vacio, porfavor agrega productos
+                        para poder verlos reflejados aqui!
+                    </Text>
                 </View>
-
             )}
             {cartlist.length > 0 && (
                 <View style={styles.buyContainer}>
@@ -66,7 +65,14 @@ function Cart({ navigation }) {
                             $ {totalProductValue.toFixed(2)}
                         </Text>
                     </View>
-                    <TouchableOpacity style={styles.buyButton} onPress={handleAddProduct}>
+                    <TouchableOpacity
+                        style={styles.buyButton}
+                        onPress={() => {
+                            setCartlist([])
+                            setTotalProductValue(0)
+                            navigation.navigate("Qr");
+                        }}
+                    >
                         <Text style={styles.textBuyContainer}>Generate QR</Text>
                     </TouchableOpacity>
                 </View>
@@ -82,8 +88,8 @@ const styles = StyleSheet.create({
     },
     return: {
         marginLeft: 10,
-        color: '#fff',
-        backgroundColor: '#202020',
+        color: "#fff",
+        backgroundColor: "#202020",
         width: 40,
         padding: 2,
         borderRadius: 5,
@@ -91,7 +97,7 @@ const styles = StyleSheet.create({
     imageReturn: {
         width: 30,
         height: 30,
-        left: 2
+        left: 2,
     },
     image: {
         width: 70,
@@ -174,16 +180,16 @@ const styles = StyleSheet.create({
         color: "#8B4513",
     },
     emptyCartContainer: {
-        position: 'absolute',
+        position: "absolute",
         top: 300,
         left: 50,
-        alignItems: 'center',
-        gap: 15
+        alignItems: "center",
+        gap: 15,
     },
     emptyCartText: {
-        textAlign: 'center',
+        textAlign: "center",
         maxWidth: 300,
-    }
+    },
 });
 
 export default Cart;

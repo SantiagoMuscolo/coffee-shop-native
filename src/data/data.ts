@@ -13,6 +13,7 @@ export default [
       "imagen": AMERICANO,
       "stars": "4.5",
       "price": "4.20",
+      "totalPeople": "(458)"
     },
     {
       "id": 2,
@@ -25,7 +26,8 @@ export default [
       "preparacion": "15-18 mins",
       "imagen": MACCHIATO,
       "stars": "5",
-      "price": "8.00"
+      "price": "8.00",
+      "totalPeople": "(156)"
     },
     {
       "id": 3,
@@ -38,7 +40,8 @@ export default [
       "preparacion": "8-12 mins",
       "imagen": FLAT_WHITE,
       "stars": "4",
-      "price": "2.20"
+      "price": "2.20",
+      "totalPeople": "(444)"
     },
     {
       "id": 4,
@@ -51,7 +54,8 @@ export default [
       "preparacion": "12-18 mins",
       "imagen": MILK_COFFEE,
       "stars": "4.5",
-      "price": "6.20"
+      "price": "6.20",
+      "totalPeople": "(546)"
     },
     {
       "id": 5,
@@ -64,7 +68,8 @@ export default [
       "preparacion": "25-28 mins",
       "imagen": AFFOGATO,
       "stars": "2",
-      "price": "1.10"
+      "price": "1.10",
+      "totalPeople": "(789)"
     },
     {
         "id": 6,
@@ -77,7 +82,8 @@ export default [
         "preparacion": "15-18 mins",
         "imagen": ESPRESSO,
         "stars": "1",
-        "price": "3.20"
+        "price": "3.20",
+        "totalPeople": "(543)"
       },
       {
         "id": 7,
@@ -90,7 +96,8 @@ export default [
         "preparacion": "15-28 mins",
         "imagen": ICE_LATTE,
         "stars": "4",
-        "price": "8.20"
+        "price": "8.20",
+        "totalPeople": "(112)"
       },
       {
         "id": 8,
@@ -103,7 +110,8 @@ export default [
         "preparacion": "5-8 mins",
         "imagen": MILK_CHOCOLATE,
         "stars": "2",
-        "price": "2.20"
+        "price": "2.20",
+        "totalPeople": "(678)"
       },
       {
         "id": 9,
@@ -116,7 +124,8 @@ export default [
         "preparacion": "5-8 mins",
         "imagen": CAPUCCINO,
         "stars": "4.5",
-        "price": "1.00"
+        "price": "1.00",
+        "totalPeople": "(789)"
       },
       {
         "id": 10,
@@ -129,7 +138,8 @@ export default [
         "preparacion": "15-18 mins",
         "imagen": MOCHA,
         "stars": "3.5",
-        "price": "4.20"
+        "price": "4.20",
+        "totalPeople": "(512)"
       }
   ]
   

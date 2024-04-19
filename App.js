@@ -5,6 +5,7 @@ import { CartProvider } from './src/context/CartContext';
 import ProductsList from './src/pages/ProductsList';
 import ProductDetail from './src/pages/ProductDetail';
 import Cart from './src/pages/Cart';
+import Qr from "./src/pages/Qr";
 
 export default function App() {
   const Stack = createNativeStackNavigator();
@@ -19,6 +20,7 @@ export default function App() {
             <Stack.Screen name="Home" component={ProductsList} />
             <Stack.Screen name="ProductDetail" component={ProductDetail} />
             <Stack.Screen name="Cart" component={Cart} />
+            <Stack.Screen name="Qr" component={Qr} />
           </Stack.Navigator>
         </NavigationContainer>
       </CartProvider>

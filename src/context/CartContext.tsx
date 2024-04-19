@@ -41,9 +41,11 @@ console.log(totalProductValue)
     <cartContext.Provider
       value={{
         cartlist,
+        setCartlist,
         addProduct,
         removeProduct,
-        totalProductValue
+        totalProductValue,
+        setTotalProductValue
       }}
     >
       {children}

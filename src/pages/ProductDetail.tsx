@@ -57,6 +57,7 @@ function ProductDetail({ route, navigation }) {
                             <View style={styles.heroRateContainer}>
                                 <Image style={styles.star} source={STAR} />
                                 <Text style={styles.textRate}>{product.stars}</Text>
+                                <Text style={styles.peopleRate}>{product.totalPeople}</Text>
                             </View>
                         </View>
                         <View style={styles.descriptionContainer}>
@@ -241,6 +242,9 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         textAlign: 'center',
         fontSize: 20,
+    },
+    peopleRate:{
+        color: '#808080'
     }
 })
 
